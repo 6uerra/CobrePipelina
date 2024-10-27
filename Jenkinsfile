@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools {
+        maven 'maven' // Usar el nombre que asignaste a la instalación de Maven
+    }
     stages {
         stage('Checkout') {
             steps {
@@ -8,7 +11,7 @@ pipeline {
         }
         stage('Run Karate Tests') {
             steps {
-                // Asegúrate de que Maven esté instalado y configurado en Jenkins
+                // Ejecuta Maven con el entorno 'qa'
                 sh 'mvn clean test -Dkarate.env=qa'
             }
         }
