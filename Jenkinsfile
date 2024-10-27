@@ -9,7 +9,7 @@ pipeline {
         stage('Run Karate Tests') {
             steps {
                 // Asegúrate de que Maven esté instalado y configurado en Jenkins
-                sh 'mvn clean test"' 
+                sh 'mvn clean test -Dkarate.env=qa'
             }
         }
     }
