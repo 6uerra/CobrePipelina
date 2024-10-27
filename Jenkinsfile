@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        maven 'maven' // Usar el nombre que asignaste a la instalación de Maven
+        maven 'Maven' // Usar el nombre que asignaste a la instalación de Maven
     }
     stages {
         stage('Checkout') {
@@ -11,8 +11,8 @@ pipeline {
         }
         stage('Run Karate Tests') {
             steps {
-                // Ejecuta Maven con el entorno 'qa'
-                sh 'mvn clean test -Dkarate.env=qa'
+                // Especifica la ruta donde está el archivo pom.xml
+                sh 'mvn -f karate/pom.xml clean test -Dkarate.env=qa'
             }
         }
     }
