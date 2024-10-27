@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        maven 'Maven' // Usar el nombre que asignaste a la instalación de Maven
+        maven 'maven' // Usar el nombre que asignaste a la instalación de Maven
     }
     stages {
         stage('Checkout') {
