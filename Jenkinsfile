@@ -13,9 +13,4 @@ pipeline {
             }
         }
     }
-    post {
-        always {
-            junit 'target/surefire-reports/*.xml' // Publicar resultados de las pruebas
-        }
-    }
 }
