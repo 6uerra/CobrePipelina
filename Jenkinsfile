@@ -7,6 +7,8 @@ pipeline {
         stage('Checkout') {
             steps {
                 checkout scm // Clona el repositorio
+                // Verifica que el pom.xml esté presente
+                sh 'ls -la' // Lista los archivos en el directorio actual
             }
         }
         stage('Run Karate Tests') {
